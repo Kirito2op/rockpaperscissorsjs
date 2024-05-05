@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    Check out the console to actually play the game.
+    <div id="ques-container">
+        <div id="ques">
+            Pick the option you want to play. Be careful the computer can read your mind!
+        </div>
+    </div>
+    <div id="score">
+        <div>Human</div>
+        <div id="humanScore">0</div>
+        <div>-</div>
+        <div id="computerScore">0</div>
+        <div>Computer</div>
+    </div>
+    <div id="choices">
+        <button id="rock">ROCK</button>
+        <button id="paper">PAPER</button>
+        <button id="scissors">SCISSORS</button>
+    </div>
+    <div id="sit-container">
+        <div id="sit"></div>
+    </div>
 </body>
 </html>

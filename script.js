@@ -12,45 +12,47 @@ const getComputerChoice = () => {
         return "rock";
     }
 }
-
-const getHumanChoice = () => {
-    let x= (prompt("What is your choice?")).toLowerCase();
-    while(x!="scissors" && x!="rock" && x!="paper"){
-        x = (prompt("Invalid input! Please enter your choice again.")).toLowerCase();
+document.getElementById("rock").addEventListener("click",function(){
+    console.log("nuifignrgin");
+    if(Math.max(computerScore,humanScore) < 5){
+        let x="rock";
+        playRound(x);
     }
-    return x;
-}
-
-const playRound = () => {
+});
+document.getElementById("paper").addEventListener("click",function(){
+    if(Math.max(computerScore,humanScore) < 5){
+        let x="paper";
+        playRound(x);
+    }
+});
+document.getElementById("scissors").addEventListener("click",function(){
+    if(Math.max(computerScore,humanScore) < 5){
+        let x="scissors";
+        playRound(x);
+    }
+});
+const playRound = (humanChoice) => {
     const computerChoice = getComputerChoice();
-    const humanChoice = getHumanChoice();
+    var sit = document.getElementById("sit");
+    var humanDisplayedScore = document.getElementById("humanScore");
+    var computerDisplayedScore = document.getElementById("computerScore");
     if(computerChoice===humanChoice){
-        console.log(`Tie! Both of you picked ${computerChoice}.`)
+        sit.textContent=`Tie! Both of you picked ${computerChoice}.`
     }
     else if((computerChoice==="scissors" && humanChoice=="paper") || (computerChoice==="rock" && humanChoice==="scissors") || (computerChoice==="paper" && humanChoice==="rock")){
-        console.log(`You lost! ${computerChoice} beats ${humanChoice}`);
+        sit.textContent=`You lost! ${computerChoice} beats ${humanChoice}`
         computerScore++;
+        computerDisplayedScore.textContent = computerScore.toString();
     }
     else{
-        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        sit.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
         humanScore++;
+        humanDisplayedScore.textContent = humanScore.toString();
+    }
+    if(computerScore==5){
+        sit.textContent = `The computer managed to read your mind! You lost noob.`;
+    }
+    if(humanScore==5){
+        sit.textContent = `You managed to somehow outwit the Computer! Good job!`
     }
 }
-
-const playGame = () => {
-    for(let i=0;i<5;i++){
-        playRound();
-    }
-    console.log(`Final score`);
-    if(computerScore===humanScore){
-        console.log(`You tied with the Computer! ${humanScore}-${computerScore}`);
-    }
-    else if(computerScore>humanScore){
-        console.log(`You lost against the Computer! ${humanScore}-${computerScore}`);
-    }
-    else{
-        console.log(`You won against the Computer! ${humanScore}-${computerScore}`);
-    }
-}
-
-playGame();
