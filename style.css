@@ -1,0 +1,44 @@
+#ques-container{
+    display: flex;
+    justify-content: center;
+}
+#ques{
+    font-family: sans-serif;
+    padding-top: 100px;
+    font-size: 28px;
+    font-weight: 800;
+    align-self: center;
+}
+#score{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+#score div{
+    font-size: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#choices{
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+#choices button{
+    height: 150px;
+    width: 150px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-color: black;
+    border-radius: 100%;
+}
+#sit-container{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+#sit{
+    font-size: 32px;
+    color: brown;
+    font-weight: 600;
+}
